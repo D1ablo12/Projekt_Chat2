@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".Autoryzacja">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="100dp"
+        app:contentPadding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/nazwa"
+            android:inputType="textCapWords"
+            android:hint="Nazwa"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/haslo"
+                android:inputType="textPassword"
+                android:hint="Hasło"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+</androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/zarejestruj"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="Zarejestruj"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+
+            android:id="@+id/zaloguj"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="Zaloguj"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+
+
+    </LinearLayout>
+
+    
+</LinearLayout>
