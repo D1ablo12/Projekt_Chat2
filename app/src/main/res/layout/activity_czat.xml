@@ -20,18 +20,28 @@
     <EditText
         android:padding="15dp"
         android:layout_alignParentLeft="true"
+
         android:layout_centerVertical="true"
         android:id="@+id/polewiadomosc"
         android:hint="Napisz wiadomosc"
+        android:layout_toLeftOf="@id/wysylaniewiad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <ImageView
-        android:id="@+id/wysylaniewiad"
+        android:id="@+id/pobraniewiad"
         android:padding="15dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_baseline_play_arrow_24"
+        android:src="@drawable/ic_baseline_download_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/wysylaniewiad"
+            android:padding="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/pobraniewiad"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </RelativeLayout>

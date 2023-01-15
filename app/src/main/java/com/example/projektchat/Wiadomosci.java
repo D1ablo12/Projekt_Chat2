@@ -62,7 +62,7 @@ public class Wiadomosci implements Comparable<Wiadomosci> {
     }
     @Override
     public String toString(){
-       return  dateTime;
+       return  wiadomosc;
     }
 }
 

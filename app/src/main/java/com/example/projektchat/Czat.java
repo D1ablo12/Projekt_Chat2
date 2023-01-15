@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -79,9 +83,18 @@ public class Czat extends AppCompatActivity {
                 if(wiadomosc.trim().length()>0){
                     wyslijWiadomosc(wiadomosc);
                 }
+                /*
                 for(int i=0; i<msgAdapter.getWiadomosciList().size();i++){
                     Log.d("ZXC",msgAdapter.getWiadomosciList().get(i).getWiadomosc());
                 }
+
+                 */
+            }
+        });
+        binding.pobraniewiad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zapisDoPliku(msgAdapter.getWiadomosciList().toString(), msgAdapter.getContext());
             }
         });
 
@@ -96,4 +109,15 @@ public class Czat extends AppCompatActivity {
         databaseReferenceWyslane.child(msgid).setValue(wiadomosci);
         databaseReferenceOdebrane.child(msgid).setValue(wiadomosci);
     }
+    private void zapisDoPliku(String data, Context context) {
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("wiadomosci.txt", Context.MODE_PRIVATE));
+            outputStreamWriter.write(data);
+            outputStreamWriter.close();
+        }
+        catch (Exception e) {
+            Log.e("Exceptionwyslanie", "File write failed: " + e.toString());
+        }
+    }
+
 }

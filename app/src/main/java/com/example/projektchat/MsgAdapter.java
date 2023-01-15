@@ -20,6 +20,10 @@ import java.util.List;
 
 public class MsgAdapter extends  RecyclerView.Adapter<MsgAdapter.MyViewHolder>{
 
+    public Context getContext() {
+        return context;
+    }
+
     private Context context;
 
     public List<Wiadomosci> getWiadomosciList() {
