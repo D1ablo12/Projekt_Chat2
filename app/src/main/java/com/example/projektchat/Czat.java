@@ -74,7 +74,7 @@ public class Czat extends AppCompatActivity {
         binding.wysylaniewiad.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                timeStamp = new SimpleDateFormat("dd-MM-yy HH:mm a").format(Calendar.getInstance().getTime());
+                timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
                 String wiadomosc=binding.polewiadomosc.getText().toString();
                 if(wiadomosc.trim().length()>0){
                     wyslijWiadomosc(wiadomosc);
